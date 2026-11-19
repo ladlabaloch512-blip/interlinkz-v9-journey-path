@@ -1,14 +1,26 @@
-
 #ilz-launcher{position:fixed;right:18px;bottom:18px;z-index:60;background:#242428;border:2px solid #FFCC01;border-radius:999px;width:60px;height:60px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 #ilz-launcher img{width:30px;height:auto}
 #ilz-panel{position:fixed;right:18px;bottom:88px;z-index:60;width:340px;max-width:calc(100vw - 24px);background:#fff;border:1px solid #ddd;border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.22);display:none;flex-direction:column;overflow:hidden}
-#ilz-panel.open{display:flex}
+#ilz-panel.open{display:flex;animation:ilzIn .25s ease}
+@keyframes ilzIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 #ilz-head{background:#242428;color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
 #ilz-head img{width:20px}
+#ilz-close{margin-left:auto;background:none;border:0;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:0 2px}
+#ilz-close:hover{color:#FFCC01}
 #ilz-msgs{padding:14px;display:flex;flex-direction:column;gap:10px;max-height:300px;overflow-y:auto}
 .ilz-msg{padding:10px 12px;border-radius:10px;font-size:14px;line-height:1.45;max-width:88%}
 .ilz-bot{background:#f4f4f4;align-self:flex-start}
 .ilz-user{background:#FFCC01;align-self:flex-end}
+.ilz-typing{display:flex;gap:5px;align-items:center;padding:13px 12px}
+.ilz-typing span{width:8px;height:8px;border-radius:50%;background:#242428;animation:ilzDot 1.1s infinite}
+.ilz-typing span:nth-child(2){background:#c79a00;animation-delay:.18s}
+.ilz-typing span:nth-child(3){animation-delay:.36s}
+@keyframes ilzDot{0%,60%,100%{opacity:.25;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.ilz-actions{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.ilz-action{display:flex;align-items:center;justify-content:center;min-height:44px;padding:10px 14px;border-radius:8px;font-size:14.5px;font-weight:700;text-decoration:none;border:1.6px solid #242428;color:#242428;background:#fff}
+.ilz-action-primary{background:#FFCC01;border-color:#FFCC01;color:#242428}
+.ilz-action:hover{background:#FFCC01}
+.ilz-action-primary:hover{background:#f0bd00}
 #ilz-chips{padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:8px}
 .ilz-chip{border:1px solid #242428;background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer}
 .ilz-chip:hover{background:#FFCC01}

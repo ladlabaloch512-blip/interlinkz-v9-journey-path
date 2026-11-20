@@ -27,3 +27,5 @@
 #ilz-form{display:flex;border-top:1px solid #eee}
 #ilz-input{flex:1;border:0;padding:12px;font-size:14px;font-family:inherit;min-width:0}
 #ilz-send{background:#FFCC01;border:0;font-weight:700;padding:0 18px;cursor:pointer}
+
+@media(max-width:760px){#ilz-launcher{width:46px;height:46px;right:12px;bottom:12px}#ilz-launcher img{width:22px}#ilz-panel{right:12px;bottom:68px}}

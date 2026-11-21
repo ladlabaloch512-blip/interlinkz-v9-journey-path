@@ -154,8 +154,10 @@ document.addEventListener('DOMContentLoaded', function () {
     hideTyping();
     while (queue.length) deliver(queue.shift());
   }
+  var closeTimer = null;
   function isOpen() { return panel.classList.contains('open'); }
   function openPanel() {
+    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; panel.classList.remove('closing'); }
     if (isOpen()) return;
     panel.classList.add('open');
     if (!opened) {
@@ -165,12 +167,18 @@ document.addEventListener('DOMContentLoaded', function () {
       flushOnReopen();
     }
   }
+  // Closing is animated: the panel plays the out transition, then hides.
   function closePanel() {
-    if (!isOpen()) return;
-    panel.classList.remove('open');
+    if (!isOpen() || panel.classList.contains('closing')) return;
+    panel.classList.add('closing');
+    closeTimer = setTimeout(function () {
+      panel.classList.remove('open');
+      panel.classList.remove('closing');
+      closeTimer = null;
+    }, 220);
   }
 
-  var chipData = [['Our Services', A.services], ['Website Types', A.types], ['How Ordering Works', A.ordering], ['Pricing', A.pricing], ['See Samples', A.samples], ['Talk to a Human', A.human]];
+  var chipData = [['Our Services', A.services], ['Prices and Packages', A.pricing], ['See Samples', A.samples], ['How Long It Takes', A.time], ['How Ordering Works', A.ordering], ['Contact a Human', A.human]];
   chipData.forEach(function (c) {
     var b = document.createElement('button');
     b.className = 'ilz-chip';
@@ -181,7 +189,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   launcher.addEventListener('click', function () {
-    if (isOpen()) closePanel(); else openPanel();
+    if (panel.classList.contains('closing')) openPanel();
+    else if (isOpen()) closePanel(); else openPanel();
   });
   document.getElementById('ilz-close').addEventListener('click', closePanel);
   document.addEventListener('click', function (e) {

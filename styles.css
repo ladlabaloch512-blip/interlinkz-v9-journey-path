@@ -294,3 +294,34 @@ div.j-grid{padding-left:0;padding-right:0}
  .foot-nav2{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 18px;width:100%}
  .foot-nav{padding-top:0}
 }
+
+/* Agency depth round 2026-11-21 */
+.quote-tab{position:fixed;left:0;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;background:#242428;color:#FFCC01;font-weight:700;letter-spacing:2px;padding:16px 9px;border-radius:0 9px 9px 0;z-index:55;font-size:14px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.quote-tab:hover{background:#FFCC01;color:#242428}
+@media(max-width:760px){.quote-tab{padding:12px 7px;font-size:12.5px;letter-spacing:1.6px}}
+.member-desig{font-size:19px;font-weight:700;color:#8a6d00;margin-top:6px}
+.member-grid{display:grid;grid-template-columns:300px 1fr;gap:34px;margin:10px 0 30px;align-items:start}
+.member-photo img{width:100%;height:auto;border-radius:8px;display:block}
+.init-block{width:300px;max-width:100%;aspect-ratio:1;background:#242428;color:#FFCC01;display:flex;align-items:center;justify-content:center;font-size:84px;font-weight:800;border-radius:8px;letter-spacing:2px}
+.member-bio p{font-size:17px;line-height:1.65;margin-bottom:14px}
+.member-list{list-style:none;margin-top:10px}
+.member-list li{padding:9px 0;border-bottom:1px solid #e3e3e6;font-size:16px}
+.team-card .t-photo{width:84px;height:84px;object-fit:cover;border-radius:8px}
+.t-init-block{display:inline-flex;align-items:center;justify-content:center;width:84px;height:84px;background:#242428;color:#FFCC01;font-size:30px;font-weight:800;border-radius:8px;letter-spacing:1px}
+.team-card .t-desig{font-weight:700;color:#8a6d00;font-size:15px;margin-bottom:6px}
+.t-link{display:inline-block;margin-top:12px;font-weight:700;text-decoration:underline}
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:26px}
+.mini-card{border:1px solid #c9c9cd;border-radius:8px;padding:22px;background:#fff}
+.mini-card h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.mini-card p{font-size:15.5px}
+.mini-grid.team-strip{grid-template-columns:1fr 1fr}
+.member-mini .t-photo{width:84px;height:84px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.member-mini .t-init-block{margin-bottom:12px}
+@media(max-width:760px){.member-grid{grid-template-columns:1fr}.mini-grid,.mini-grid.team-strip{grid-template-columns:1fr}}
+/* Reviews slider structure: held until real reviews are confirmed. Not used on live pages. */
+.rev-wrap{overflow:hidden}
+.rev-track{display:flex;gap:22px;transition:transform .45s ease}
+.rev-card{flex:0 0 340px;border:1px solid #c9c9cd;border-radius:8px;padding:22px;background:#fff}
+.rev-stars{color:#FFCC01;font-size:17px;letter-spacing:3px}
+.rev-card p{font-size:15.5px;margin-top:10px}
+.rev-card .rev-name{font-weight:800;margin-top:12px}

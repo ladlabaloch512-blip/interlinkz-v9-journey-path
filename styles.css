@@ -325,3 +325,6 @@ div.j-grid{padding-left:0;padding-right:0}
 .rev-stars{color:#FFCC01;font-size:17px;letter-spacing:3px}
 .rev-card p{font-size:15.5px;margin-top:10px}
 .rev-card .rev-name{font-weight:800;margin-top:12px}
+
+/* Journey line is a desktop-only decoration; the mobile steps keep their own line */
+@media(max-width:860px){.journey-line{display:none}}

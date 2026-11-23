@@ -88,8 +88,8 @@ footer .foot-contact a:hover{text-decoration:underline}
  .contact-grid{grid-template-columns:1fr}
 }
 @media(max-width:860px){
- .main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;border-bottom:1px solid #ddd;gap:6px}
- .main-nav.open{display:flex}
+ .main-nav{display:flex;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:0 24px 0 44px;border-bottom:1px solid #ddd;gap:6px;max-height:0;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);transition:max-height .45s ease,opacity .3s ease,transform .35s ease,padding .45s ease,visibility 0s linear .45s}
+ .main-nav.open{max-height:320px;padding:16px 24px 16px 44px;opacity:1;visibility:visible;transform:translateY(0);transition:max-height .45s ease,opacity .3s ease,transform .35s ease,padding .45s ease}
  .nav-toggle{display:block}
  .btn-head{display:none}
  .foot-nav{margin-left:0}
@@ -328,3 +328,16 @@ div.j-grid{padding-left:0;padding-right:0}
 
 /* Journey line is a desktop-only decoration; the mobile steps keep their own line */
 @media(max-width:860px){.journey-line{display:none}}
+
+/* Responsive gate fix 2026-11-23: slim the quote tab on small screens and keep
+   all page content clear of its band, including the Journey Path column, the
+   hero button and the 404 body; on the Contact page the chat launcher stays
+   off the form at phone widths */
+@media(max-width:760px){
+ .quote-tab{padding:10px 5px;font-size:11px;letter-spacing:1.2px}
+ .wrap{padding-left:44px}
+ .nf{padding-left:44px}
+ .j-steps{padding-left:44px}
+ .hero-journey{padding-left:44px}
+ body.pg-contact #ilz-launcher{display:none}
+}

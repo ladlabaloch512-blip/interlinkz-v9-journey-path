@@ -341,3 +341,24 @@ div.j-grid{padding-left:0;padding-right:0}
  .hero-journey{padding-left:44px}
  body.pg-contact #ilz-launcher{display:none}
 }
+
+/* Footer rebuild 2026-11-23: one clean structure. Brand block (logo, tagline,
+   website and email), Services column, Company column in two link tracks,
+   and a single bottom row with the legal links. No link appears twice. */
+.foot-contact-lines{flex-basis:100%;margin:10px 0 0;font-size:15px;line-height:1.55}
+.foot-contact-lines a{text-decoration:none}
+.foot-contact-lines a:hover{text-decoration:underline}
+.footer-in{align-items:flex-start}
+.foot-cols{display:flex;gap:54px;margin-left:auto}
+.foot-col h4{font-size:13px;font-weight:700;letter-spacing:1.6px;margin:0 0 10px;color:#fff;display:inline-block;border-bottom:3px solid #FFCC01;padding-bottom:4px}
+.foot-col a{display:block;font-size:15.5px;padding:2px 0;white-space:nowrap;text-decoration:none}
+.foot-col a:hover{text-decoration:underline}
+.foot-col-grid{display:grid;grid-template-rows:repeat(4,auto);grid-auto-flow:column;column-gap:46px}
+.foot-col-grid a{display:block;font-size:15.5px;padding:2px 0;white-space:nowrap}
+.foot-bar{border-top:1px solid #3a3a40;padding-top:16px;margin-top:22px}
+.foot-legal{margin-left:0;flex-direction:row}
+@media(max-width:760px){
+ .foot-cols{margin-left:0;flex-wrap:wrap;gap:36px}
+ .foot-col-grid{column-gap:30px}
+ .foot-bar{padding-left:44px}
+}
